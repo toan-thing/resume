@@ -1,0 +1,145 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\setlength{\parindent}{0pt}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage[vietnamese]{babel}
+\usepackage[left=1.27cm,top=1.27cm,right=1.27cm,bottom=1.27cm]{geometry}
+
+\pagestyle{empty}
+
+% ─── Reusable spacing & layout macros ─────────────────────────────────────
+% Mọi itemize trong toàn văn bản dùng chung 1 cấu hình spacing duy nhất
+\setlist[itemize]{noitemsep, topsep=0pt, partopsep=0pt, parsep=0pt, leftmargin=1.15em}
+
+% Dấu phân tách dùng lặp lại nhiều nơi (contact, honors, languages...)
+\newcommand{\sep}{\textbullet\ }
+
+% Heading section: dùng \par thay cho environment center để tránh spacing
+% ẩn không kiểm soát được; khoảng cách trước/sau được khai báo rõ ràng
+\newcommand{\resumeSection}[1]{%
+  \par\vspace{13pt}%
+  {\centering\textbf{\large #1}\par}%
+  \vspace{6pt}%
+}
+
+% Khối tiêu đề 1 mục kinh nghiệm/học vấn: org+location, role+date
+\newcommand{\resumeSubheading}[4]{%
+  \textbf{#1} \hfill #2\\
+  \textbf{#3} \hfill #4%
+}
+
+% Khoảng cách cố định giữa các mục liên tiếp trong cùng 1 section
+\newcommand{\entrygap}{\vspace{10pt}}
+
+
+
+
+
+
+
+
+
+
+\begin{document}
+
+\begin{center}
+    \textbf{\LARGE Pham Quoc Toan}\\
+    \vspace{4pt}
+    \hrulefill
+\end{center}
+
+\begin{center}
+    Ho Chi Minh City, Vietnam \sep
+    \href{mailto:toan.phamquoc@hcmut.edu.vn}{toan.phamquoc@hcmut.edu.vn} \sep
+    (+84) 346-152-824 \\
+    \vspace{2pt}
+    \href{https://www.linkedin.com/in/pham-quoc-toan}{linkedin.com/in/pham-quoc-toan} \sep
+    \href{https://github.com/toan-thing}{github.com/toan-thing}
+\end{center}
+
+% ─── EDUCATION ───────────────────────────────────────────────────────────────
+\resumeSection{Education}
+
+\resumeSubheading
+  {Ho Chi Minh City University of Technology (HCMUT), VNU-HCM}{Ho Chi Minh City, Vietnam}
+  {Bachelor of Computer Science --- Applied Artificial Intelligence}{Oct 2022 -- Nov 2026}\\
+CGPA: 3.4 / 4.0
+
+\vspace{3pt}
+\textbf{Honors \& Awards}
+\begin{itemize}
+    \item Faculty Academic Encouragement Scholarship
+    \item University Outstanding All-Round Student Award
+    \item Ho Chi Minh City-Level ``Five-Good Student'' Award
+\end{itemize}
+
+% ─── RESEARCH & PUBLICATIONS ─────────────────────────────────────────────────
+\resumeSection{Research \& Publications}
+
+\textbf{\href{https://doi.org/10.1007/978-3-032-10202-7_33}
+{A Benchmark Dataset and Evaluation Framework for Vietnamese Large Language Models in Customer Support}}
+
+\textit{Co-author} --- 17th International Conference on Computational Collective Intelligence (ICCCI 2025)
+\hfill 2025
+
+\begin{itemize}
+    \item \textbf{Dataset:} Introduced CSConDa, a benchmark comprising 9,849 anonymized QA pairs from real-world Vietnamese customer--advisor conversations, categorized into General, Domain-Specific Simple, and Domain-Specific Complex queries.
+
+    \item \textbf{Evaluation Framework:} Proposed a multi-aspect evaluation framework combining six automatic metrics (lexical, semantic, and hallucination assessment) with five syntactic measures to evaluate accuracy, fluency, and linguistic characteristics of Vietnamese LLMs.
+
+    \item \textbf{Empirical Findings:} Benchmarked 11 lightweight open-source ViLLMs (7--9B parameters), identifying Vistral 7B as the top-ranked model and revealing that LLMs tend to generate more verbose and syntactically rigid responses than human advisors.
+\end{itemize}
+
+Published in \textit{Advances in Computational Collective Intelligence},
+Springer CCIS, vol.~2747, pp.~481--496.
+\href{https://arxiv.org/abs/2507.22542}{arXiv:2507.22542}.
+
+% ─── PROJECTS ────────────────────────────────────────────────────────────────
+\resumeSection{Projects}
+
+\resumeSubheading
+  {E-Commerce System for Mobile Phone Retail with AI agent Virtual Assistant}{Ho Chi Minh City, Vietnam}
+  {Capstone Project --- HCMUT}{Aug 2025 -- May 2026}
+\begin{itemize}
+    \item Built a product dataset by scraping 975 products and 1,901 variants across 7 categories from CellPhones.com.vn using Playwright and BeautifulSoup.
+
+    \item Architected a multi-database architecture integrating PostgreSQL/Supabase for structured data, Neo4j/AuraDB for knowledge graph and customer personalization, and ChromaDB for Vietnamese semantic search via RAG.
+    
+    \item Designed a 4-node LangGraph agentic workflow (parse $\rightarrow$ resolve $\rightarrow$ reason $\rightarrow$ tools), incorporating multi-step reasoning, memory management, and structured function calling with GPT-4o mini and GPT-4o via the OpenAI API.
+
+    \item Evaluated AI agent service performance, achieving a 100\% pass rate across 75 test cases spanning 3 testing levels.
+\end{itemize}
+
+% ─── EXPERIENCE ──────────────────────────────────────────────────────────────
+\resumeSection{Experience}
+
+\resumeSubheading
+  {Phương Quân Co., Ltd (CÔNG TY TNHH TM DV PHƯƠNG QUÂN)}{Ho Chi Minh City, Vietnam}
+  {AI Engineer Intern}{Jun 2025 -- Aug 2025}
+\begin{itemize}
+    \item Built an LLM-based telecom assistant using RAG, intent parsing, and a curated Vietnamese knowledge base.
+\end{itemize}
+
+\entrygap
+
+\resumeSubheading
+  {Department of Health --- Ho Chi Minh City}{Ho Chi Minh City, Vietnam}
+  {Research Contributor --- Illegal Medical Advertisement Detection}{Nov 2024 -- Jan 2025}
+\begin{itemize}
+    \item Developed a web crawler using Python and Selenium to scrape illegal medical advertisements from Facebook.
+\end{itemize}
+
+% ─── SKILLS ──────────────────────────────────────────────────────────────────
+\resumeSection{Skills}
+
+\textbf{Programming:} Python, C/C++, R\\
+\textbf{AI:} LLMs, LLM API, RAG, Multi-Agent Systems, Function Calling, LangChain, LangGraph, PyTorch, TensorFlow\\
+\textbf{Backend:} RESTful APIs, FastAPI, Flask, PostgreSQL, Neo4j, Chroma\\
+\textbf{Tools:} Linux, Docker, Git/GitFlow, Hugging Face\\
+\textbf{Languages:} Vietnamese (Native) \sep English (Professional - TOEIC L\&R: 930/990)
+
+\end{document}
